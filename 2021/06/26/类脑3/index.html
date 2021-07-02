@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>类脑计算的困境和出路（3） | 锐的小屋</title><meta name="keywords" content="计算机技术,类脑计算,复杂性"><meta name="author" content="锐"><meta name="copyright" content="锐"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="上回聊了很多概念，总的来说希望给大家带来一个基于描述复杂性的层级的视角来理解AGI、深度学习和图灵机的整体蓝图。简单总结一下：  图灵机支持的算法集合包罗万象，统称为图灵可计算函数。 人可以维护的复杂性有限，人可以直接设计出的图灵机算法的集合是低描述复杂性算法集合，是图灵可计算函数的一个很小的子集。 深度学习模型基于图灵机，训练好的深度学习模型整个前向过程也是图灵可计算函数，深度学习模型的集合也是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="类脑计算的困境和出路（3）">
+<meta property="og:url" content="http://example.com/2021/06/26/%E7%B1%BB%E8%84%913/index.html">
+<meta property="og:site_name" content="锐的小屋">
+<meta property="og:description" content="上回聊了很多概念，总的来说希望给大家带来一个基于描述复杂性的层级的视角来理解AGI、深度学习和图灵机的整体蓝图。简单总结一下：  图灵机支持的算法集合包罗万象，统称为图灵可计算函数。 人可以维护的复杂性有限，人可以直接设计出的图灵机算法的集合是低描述复杂性算法集合，是图灵可计算函数的一个很小的子集。 深度学习模型基于图灵机，训练好的深度学习模型整个前向过程也是图灵可计算函数，深度学习模型的集合也是">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/postcover.jpg">
+<meta property="article:published_time" content="2021-06-26T02:04:05.000Z">
+<meta property="article:modified_time" content="2021-07-02T02:09:05.000Z">
+<meta property="article:author" content="锐">
+<meta property="article:tag" content="计算机技术">
+<meta property="article:tag" content="类脑计算">
+<meta property="article:tag" content="复杂性">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/postcover.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/2021/06/26/%E7%B1%BB%E8%84%913/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '类脑计算的困境和出路（3）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-07-02 10:09:05'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="http://wx4.sinaimg.cn/mw690/ab494ac4gy1gcyg2gbbeyj20yk0u01kx.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-bars"></i><span> 媒体</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/video/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-book"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/postcover.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">锐的小屋</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-bars"></i><span> 媒体</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/video/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-book"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">类脑计算的困境和出路（3）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-06-26T02:04:05.000Z" title="发表于 2021-06-26 10:04:05">2021-06-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-07-02T02:09:05.000Z" title="更新于 2021-07-02 10:09:05">2021-07-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%BD%AC%E8%BD%BD/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/">计算机技术</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E7%B1%BB%E8%84%91%E8%AE%A1%E7%AE%97/">类脑计算</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="类脑计算的困境和出路（3）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>上回聊了很多概念，总的来说希望给大家带来一个基于描述复杂性的层级的视角来理解AGI、深度学习和图灵机的整体蓝图。简单总结一下：</p>
+<ul>
+<li>图灵机支持的算法集合包罗万象，统称为图灵可计算函数。</li>
+<li>人可以维护的复杂性有限，人可以直接设计出的图灵机算法的集合是低描述复杂性算法集合，是图灵可计算函数的一个很小的子集。</li>
+<li>深度学习模型基于图灵机，训练好的深度学习模型整个前向过程也是图灵可计算函数，深度学习模型的集合也是图灵可计算函数的一个子集，但大多落在高描述复杂性算法集合内。深度学习帮助我们提高了描述复杂性的层级，从而也带来了突破性的能力。</li>
+<li>人建模深度学习模型是站在模型结构层面，而非具体规则（参数）层面，在模型结构层面看，模型的描述复杂性仍然是比较低的。深度学习模型的集合同样很大，但人可以直接设计出的深度学习模型也只是低描述复杂性模型子集。</li>
+<li>人脑很可能是一个跨越了大量层级的超级系统，其能力很难在低层级实现，甚至概念上都没法有效地定义出来。</li>
+</ul>
+<p>所以从这样的视角来看，实现类脑智能就像攀登描述复杂性的珠峰，图灵机为我们提供了坚实的地基。传统的机器学习向上一跃，抓住了一根高处的树枝，瞥见了高处的风景。而深度学习则真正带领我们爬上了第一层复杂性极限的台阶，逐步构建起一个大本营，能让我们在这个高度自由探索，这个平台看到的风景和山脚的风景有很大的不同。而自然界创造出来的人类大脑显然是远在山巅。我们能看到云层深处的人脑具有的强大通用智能能力。</p>
+<p>深度学习带我们爬上了一定的高度，但显然和人脑在山顶的风景差异巨大，因此很多人就觉得我们可能走错路了，想推翻深度学习，重新搜索一个新的路径上山，类脑在SNN算法上的执着正如重新回到山角开辟一条新的路上山，当然目前还处于够树枝的阶段，远没实现迈上一个台阶的目标。而类脑目前在芯片系统层面的挣扎是连地基都砸了，于是深陷到海沟里了。我在前面的文章里提过我写的一篇关于类脑系统栈的设计，充其量顶多是提供了一块木板，勉强让类脑芯片可以趴在上面喘口气，但其坚固程度远远比不上图灵机。</p>
+<p>那么回到这篇文章的主旨，出路在哪里？如果你接受了我前面的整个视角，那么战略上的答案显然是呼之欲出的——基于深度学习继续往上爬！！！！</p>
+<p>问题是战术上怎么做呢？</p>
+<p>战术上的做法肯定很多，我在这里也算是抛砖引玉了。不过在介绍具体的一些策略前，我还是想进一步探讨一下怎样才算是往上爬。</p>
+<p>其实人类战胜复杂性的手段只有一个，那就是解耦合。但解耦合有两种，一种是问题的抽象和解耦。计算机领域有一个经典的方法论：</p>
+<blockquote>
+<p>All problems in computer science can be solved by another level of indirection.</p>
+</blockquote>
+<p>通过增加抽象将问题解耦合，我们可以降低整个系统设计的复杂性。这是我们构建整个计算机系统最核心的方法论。</p>
+<p>但我在这个系列里讲的层级则是另一种，一定程度上也是对应上面那段话的后面半句。</p>
+<blockquote>
+<p>Except for the problem of too many layers of indirection</p>
+</blockquote>
+<p>当我们做了过多的解耦合，以至于这些分层本身也变成一个问题时，如果系统的设计还是没法简化，那此时系统的复杂度就非常接近我们前面提的描述复杂性了，因为描述复杂性是本身就是解耦合和化简的极限。对于这种高描述复杂性的问题，我们只能用涌现的方式来实现复杂性层级的跨越。</p>
+<p>涌现和传统的抽象解耦的主要区别在于，抽象解耦仍然是精确的，对细节的把控仍然是精确到每一个基本组件的，只是抽象的不同层聚焦问题的不同部分，但不同层的解决逻辑作为一个整体仍然是精确控制着整个系统的组织形式，解决问题的基本逻辑是没有变的。而涌现则必然需要放弃对系统每个基本实体状态的控制，只关注宏观层面涌现出来的状态，并且涌现出的状态要能体现出全新的解决问题的逻辑。</p>
+<p>具体来讲，图灵机解决问题的基本思路就是一步一步精确的逻辑与指令，拿到一个具体问题，如何拆成一步一步的指令，这就是我们平时所说的编程思维，也是图灵机解决问题的根本逻辑，这一点无论我们对软件进行分层和抽象都不会变化。因此没有描述复杂性的涌现，算法的逻辑变了就是不同的算法。</p>
+<p>而深度学习放弃了对精确的逻辑与指令的控制，转而把控计算的形式，也就是模型结构。只要结构相同就是同一个模型，哪怕训练出的模型参数完全不同。另一方面，深度学习解决问题的根本逻辑与图灵机带来的编程思维是有根本性不同的。我们设计神经网络对架构的设计遵循的是一套截然不同的逻辑，这套逻辑现在甚至没法形式化，更多是靠神经网络研究人员的经验，但显然和图灵机那套拆分成指令的编程思维完全不同。这种设计范式在底层逻辑上与图灵机的编程思维的差异才能带来描述复杂性的层级提升和涌现。</p>
+<p>这一点区别非常重要，大家可以好好思考和感悟一下。</p>
+<p>那么同样，对于深度学习建模的问题，其基石是计算图，我们可以通过增加抽象来简化建模的难度，例如当前一些框架引入的module概念，以嵌套方式建模。但要提高层级，我们必须放弃对部分建模细节的控制，并且把控一些更高层级的概念。</p>
+<p>说到这里不知道大家有没有想到automl。当然我相信大部分做automl研究的并非朝着这个目标在演进，不过确实可以提供一定的借鉴意义。我这篇文章其实也想以automl为例子抛砖引玉探讨一下进一步提升描述复杂性层级的可能性。</p>
+<p>我们可以重复一下前面的思想实验，前面我们把一个训练好的图像分类深度学习模型带到几十年前作为标准答案给大家当图灵机算法抄作业，大家根本没法理解这个算法怎么工作的。现在如果把几十年后用一种更高级的automl方式建出了更通用的智能模型，然后把搜出来的模型结构带到现在给大家抄答案，大家可以想象一下一个结构庞大且非常混乱的深度学习模型，但是可以跑一下可以实现很复杂任务的模型，我们一样也没法理解为啥能工作，同样也没法基于这个模型抄作业搞二次开发，更没法按照现在设计模型的方式设计出这种模型。这就是层级的重要性。</p>
+<p>深度学习模型虽然具体规则都是训练出来的，但模型结构是可编程的，模型结构至关重要，也指导了到底生成什么样的规则。同样，automl的结构虽然是搜出来的，但仍然需要很多人类先验知识，也就是说我们需要对automl进行元编程，并且要把这种元编程的形式设计得逐渐和计算图解耦合，能让大家直接在这个层面设计模型。这一点，目前的automl还是远远不够的，现在automl的大框架基本是定义搜索空间和定义基本块，最后再加上一个搜索算法，背后计算图的抽象还是脱离不了的。要沿着这条路实现层级提升，至少要实现两个方面的改造。</p>
+<p>一方面是元编程范式/语言的设计，也就是怎样建立一层抽象来尽量完备地表达先验知识，这个其实我们可以从过去深度学习的各种milestone论文来考虑，而且不同领域可能不太一样。像cv领域更注重结构的pattern，宏观结构基本是确定的，典型的如inception，resnet等，都是对于结构pattern的描述。而nlp领域则更多是宏观结构的设计，像seq2seq，attention到self attention等。这种pattern和宏观结构是需要元编程范式来描述的，最好能做到论文里一张图或者一个公式，描述起来也是一句声明。然后靠automl算法来生成细节的模型。比如resnet核心就是残差连接，元语言应当也需要一两句话表达清楚，然后靠算法来生成具体的resnetxxx，准确率还要能达到差不多的水平。这样研究人员才能快速验证idea的可靠性，同时可以开发元语言需要写几百几千行代码的超级模型。</p>
+<p>另一方面是automl搜索算法的改进，automl现在基本是靠随机搜索来找结构，随机战胜不了复杂性。深度学习的权重是靠梯度来训练的。如果我们用随机搜索的方式来确定一个cnn模型的权重，估计永远搜不出好的解。目前automl看起来还可以一方面是因为先验给的足够好，毕竟都是成熟的领域，另一方面规模还太小，还是在低复杂性模型范围的浅滩上尝试。搜出来的模型虽然也比较乱，但还是完全没法抄作业的程度。而未来，我们是要靠这样的算法带领我们走进高复杂性模型的汪洋大海的去探索不成熟、未知的领域的。而且它要作为我们未来探索的新地基，就像梯度下降一样，支持我们从最简单的感知机模型一直走到目前各种超大规模预训练模型。</p>
+<p>automl再往上走，层级是什么样，我也不清楚，现阶段也很难有很靠谱的方向，等我们爬上了新的地基探索一段时间就慢慢能建立起来，有可能仍然是规模的扩展，也有可能是类似硬件到软件的变化。我也希望和大家共同努力，努力爬上更高的台阶。</p>
+<p>前面说了很多都是算法层面的事情，其实这个也确实是实现AGI最critical的问题。不过，automl需要的计算资源已经非常可怕了，如果我们沿着这条路把automl做到现在难以想象的规模，算力怎么办？其实我觉得也不用过于担心，要知道描述复杂性的提升也是算力利用率的提升，毕竟描述复杂性上来了，模型就不是“虚胖了”，虚胖的模型吃的计算资源还是巨大的，但解决的问题却不多，随着描述复杂性提升，模型会变得越来越实在。像人脑这种超级系统整体规模其实非常有限，功耗也极低。我们看深度学习的发展历程也可以看出来，早期确实会有一个算力黑洞的阶段，像早期的vgg模型，这个是模型探索阶段必然要经历的，后面会慢慢精细化，最后cnn分类可以小到可以全放片上缓存里，这个过程肯定是迭代的，像现在的nlp的超大规模预训练模型也正处于一个粗放型探索阶段，随着探索阶段的收尾，又会慢慢回到精细型，这种wave会持续很久，直到我们把这个层级的算力利用能力榨干。</p>
+<p>因此，在硬件和系统层面，我们也要做好迎接初期算力黑洞时期的准备，但请相信，我们在下个层级能拿到的更高级的智能模型所需的运算量肯定不会超过目前预训练模型的计算量。我也希望和各位共同努力，愿有生之年能一览众山小！</p>
+<p>编辑于 2021-06-26</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">mackler</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/383727704">https://zhuanlan.zhihu.com/p/383727704</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">锐的小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/">计算机技术</a><a class="post-meta__tags" href="/tags/%E7%B1%BB%E8%84%91%E8%AE%A1%E7%AE%97/">类脑计算</a><a class="post-meta__tags" href="/tags/%E5%A4%8D%E6%9D%82%E6%80%A7/">复杂性</a></div><div class="post_share"><div class="social-share" data-image="/img/postcover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/06/24/%E7%B1%BB%E8%84%912/"><img class="next-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/postcover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">类脑计算的困境和出路（2）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/06/10/类脑1/" title="类脑计算的困境和出路（1）"><img class="cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/postcover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-10</div><div class="title">类脑计算的困境和出路（1）</div></div></a></div><div><a href="/2021/06/24/类脑2/" title="类脑计算的困境和出路（2）"><img class="cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/postcover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-24</div><div class="title">类脑计算的困境和出路（2）</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="http://wx4.sinaimg.cn/mw690/ab494ac4gy1gcyg2gbbeyj20yk0u01kx.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">锐</div><div class="author-info__description">看自己，看天地，看众生。</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://www.bilibili.com/"><i class="fas fa-globe"></i><span>去哔哩哔哩</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://photo.weibo.com/" target="_blank" title="微博相册"><i class="fab fa-weibo"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">陌生人，感激你的到来！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/06/26/%E7%B1%BB%E8%84%913/" title="类脑计算的困境和出路（3）"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/postcover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="类脑计算的困境和出路（3）"/></a><div class="content"><a class="title" href="/2021/06/26/%E7%B1%BB%E8%84%913/" title="类脑计算的困境和出路（3）">类脑计算的困境和出路（3）</a><time datetime="2021-06-26T02:04:05.000Z" title="发表于 2021-06-26 10:04:05">2021-06-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/24/%E7%B1%BB%E8%84%912/" title="类脑计算的困境和出路（2）"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/postcover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="类脑计算的困境和出路（2）"/></a><div class="content"><a class="title" href="/2021/06/24/%E7%B1%BB%E8%84%912/" title="类脑计算的困境和出路（2）">类脑计算的困境和出路（2）</a><time datetime="2021-06-24T02:04:05.000Z" title="发表于 2021-06-24 10:04:05">2021-06-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/10/%E7%B1%BB%E8%84%911/" title="类脑计算的困境和出路（1）"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/postcover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="类脑计算的困境和出路（1）"/></a><div class="content"><a class="title" href="/2021/06/10/%E7%B1%BB%E8%84%911/" title="类脑计算的困境和出路（1）">类脑计算的困境和出路（1）</a><time datetime="2021-06-10T02:04:05.000Z" title="发表于 2021-06-10 10:04:05">2021-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/05/%E4%B8%80%E4%BA%9B%E9%9A%8F%E6%83%B3/" title="一些随想"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://wx2.sinaimg.cn/large/ab494ac4gy1gr77l3qzr8j20k00b9ahr.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一些随想"/></a><div class="content"><a class="title" href="/2021/06/05/%E4%B8%80%E4%BA%9B%E9%9A%8F%E6%83%B3/" title="一些随想">一些随想</a><time datetime="2021-06-05T03:04:05.000Z" title="发表于 2021-06-05 11:04:05">2021-06-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/12/%E4%BB%8E%E5%AE%89%E9%A1%BA%E5%85%AC%E4%BA%A4%E5%8F%B8%E6%9C%BA%E7%9C%8B%E5%8F%91%E5%B1%95%E7%9A%84%E9%97%AE%E9%A2%98/" title="从安顺公交司机看发展的问题"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://wx1.sinaimg.cn/wap720/ab494ac4gy1ggog2ow5zrj21kw0w00yd.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从安顺公交司机看发展的问题"/></a><div class="content"><a class="title" href="/2020/07/12/%E4%BB%8E%E5%AE%89%E9%A1%BA%E5%85%AC%E4%BA%A4%E5%8F%B8%E6%9C%BA%E7%9C%8B%E5%8F%91%E5%B1%95%E7%9A%84%E9%97%AE%E9%A2%98/" title="从安顺公交司机看发展的问题">从安顺公交司机看发展的问题</a><time datetime="2020-07-12T02:04:05.000Z" title="发表于 2020-07-12 10:04:05">2020-07-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/postcover.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 锐</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      true && mermaid.init()
+    })
+  }
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener toc scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

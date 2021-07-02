@@ -1,0 +1,477 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Markdown Test 003 | 锐的小屋</title><meta name="author" content="锐"><meta name="copyright" content="锐"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Markdown: Syntax Overview   Philosophy   Inline HTML   Automatic Escaping for Special Characters   Block Elements   Paragraphs and Line Breaks   Headers   Blockquotes   Lists   Code Blocks   Horizonta">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Markdown Test 003">
+<meta property="og:url" content="http://example.com/about/MarkdownTest003.html">
+<meta property="og:site_name" content="锐的小屋">
+<meta property="og:description" content="Markdown: Syntax Overview   Philosophy   Inline HTML   Automatic Escaping for Special Characters   Block Elements   Paragraphs and Line Breaks   Headers   Blockquotes   Lists   Code Blocks   Horizonta">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/postcover.jpg">
+<meta property="article:published_time" content="2021-06-30T02:08:05.000Z">
+<meta property="article:modified_time" content="2021-06-30T05:10:49.629Z">
+<meta property="article:author" content="锐">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/postcover.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/about/MarkdownTest003"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Markdown Test 003',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-06-30 13:10:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="http://wx4.sinaimg.cn/mw690/ab494ac4gy1gcyg2gbbeyj20yk0u01kx.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-bars"></i><span> 媒体</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/video/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-book"></i><span> 关于我</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url('/img/topimg.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">锐的小屋</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-bars"></i><span> 媒体</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/video/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-book"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">Markdown Test 003</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h1 id="Markdown-Syntax"><a href="#Markdown-Syntax" class="headerlink" title="Markdown: Syntax"></a>Markdown: Syntax</h1><ul>
+<li><a href="#overview">Overview</a><ul>
+<li>  <a href="#philosophy">Philosophy</a></li>
+<li>  <a href="#html">Inline HTML</a></li>
+<li>  <a href="#autoescape">Automatic Escaping for Special Characters</a></li>
+</ul>
+</li>
+<li><a href="#block">Block Elements</a><ul>
+<li>  <a href="#p">Paragraphs and Line Breaks</a></li>
+<li>  <a href="#header">Headers</a></li>
+<li>  <a href="#blockquote">Blockquotes</a></li>
+<li>  <a href="#list">Lists</a></li>
+<li>  <a href="#precode">Code Blocks</a></li>
+<li>  <a href="#hr">Horizontal Rules</a></li>
+</ul>
+</li>
+<li><a href="#span">Span Elements</a><ul>
+<li>  <a href="#link">Links</a></li>
+<li>  <a href="#em">Emphasis</a></li>
+<li>  <a href="#code">Code</a></li>
+<li>  <a href="#img">Images</a></li>
+</ul>
+</li>
+<li><a href="#misc">Miscellaneous</a><ul>
+<li>  <a href="#backslash">Backslash Escapes</a></li>
+<li>  <a href="#autolink">Automatic Links</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>Note:</strong> This document is itself written using Markdown; you<br>can <a href="/projects/markdown/syntax.text">see the source for it by adding ‘.text’ to the URL</a>.</p>
+<hr>
+<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><h3 id="Philosophy"><a href="#Philosophy" class="headerlink" title="Philosophy"></a>Philosophy</h3><p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible.</p>
+<p>Readability, however, is emphasized above all else. A Markdown-formatted<br>document should be publishable as-is, as plain text, without looking<br>like it’s been marked up with tags or formatting instructions. While<br>Markdown’s syntax has been influenced by several existing text-to-HTML<br>filters – including <a target="_blank" rel="noopener" href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a>, <a target="_blank" rel="noopener" href="http://www.aaronsw.com/2002/atx/">atx</a>, <a target="_blank" rel="noopener" href="http://textism.com/tools/textile/">Textile</a>, <a target="_blank" rel="noopener" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>,<br><a target="_blank" rel="noopener" href="http://www.triptico.com/software/grutatxt.html">Grutatext</a>, and <a target="_blank" rel="noopener" href="http://ettext.taint.org/doc/">EtText</a> – the single biggest source of<br>inspiration for Markdown’s syntax is the format of plain text email.</p>
+<h2 id="Block-Elements"><a href="#Block-Elements" class="headerlink" title="Block Elements"></a>Block Elements</h2><h3 id="Paragraphs-and-Line-Breaks"><a href="#Paragraphs-and-Line-Breaks" class="headerlink" title="Paragraphs and Line Breaks"></a>Paragraphs and Line Breaks</h3><p>A paragraph is simply one or more consecutive lines of text, separated<br>by one or more blank lines. (A blank line is any line that looks like a<br>blank line – a line containing nothing but spaces or tabs is considered<br>blank.) Normal paragraphs should not be indented with spaces or tabs.</p>
+<p>The implication of the “one or more consecutive lines of text” rule is<br>that Markdown supports “hard-wrapped” text paragraphs. This differs<br>significantly from most other text-to-HTML formatters (including Movable<br>Type’s “Convert Line Breaks” option) which translate every line break<br>character in a paragraph into a <code>&lt;br /&gt;</code> tag.</p>
+<p>When you <em>do</em> want to insert a <code>&lt;br /&gt;</code> break tag using Markdown, you<br>end a line with two or more spaces, then type return.</p>
+<h3 id="Headers"><a href="#Headers" class="headerlink" title="Headers"></a>Headers</h3><p>Markdown supports two styles of headers, [Setext] [1] and [atx] [2].</p>
+<p>Optionally, you may “close” atx-style headers. This is purely<br>cosmetic – you can use this if you think it looks better. The<br>closing hashes don’t even need to match the number of hashes<br>used to open the header. (The number of opening hashes<br>determines the header level.)</p>
+<h3 id="Blockquotes"><a href="#Blockquotes" class="headerlink" title="Blockquotes"></a>Blockquotes</h3><p>Markdown uses email-style <code>&gt;</code> characters for blockquoting. If you’re<br>familiar with quoting passages of text in an email message, then you<br>know how to create a blockquote in Markdown. It looks best if you hard<br>wrap the text and put a <code>&gt;</code> before every line:</p>
+<blockquote>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,<br>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.<br>Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse<br>id sem consectetuer libero luctus adipiscing.</p>
+</blockquote>
+<p>Markdown allows you to be lazy and only put the <code>&gt;</code> before the first<br>line of a hard-wrapped paragraph:</p>
+<blockquote>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,<br>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.<br>Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+</blockquote>
+<blockquote>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse<br>id sem consectetuer libero luctus adipiscing.</p>
+</blockquote>
+<p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by<br>adding additional levels of <code>&gt;</code>:</p>
+<blockquote>
+<p>This is the first level of quoting.</p>
+<blockquote>
+<p>This is nested blockquote.</p>
+</blockquote>
+<p>Back to the first level.</p>
+</blockquote>
+<p>Blockquotes can contain other Markdown elements, including headers, lists,<br>and code blocks:</p>
+<blockquote>
+<h2 id="This-is-a-header"><a href="#This-is-a-header" class="headerlink" title="This is a header."></a>This is a header.</h2><ol>
+<li>  This is the first list item.</li>
+<li>  This is the second list item.</li>
+</ol>
+<p>Here’s some example code:</p>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);
+</code></pre>
+</blockquote>
+<p>Any decent text editor should make email-style quoting easy. For<br>example, with BBEdit, you can make a selection and choose Increase<br>Quote Level from the Text menu.</p>
+<h3 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h3><p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
+<p>Unordered lists use asterisks, pluses, and hyphens – interchangably<br>– as list markers:</p>
+<ul>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
+</ul>
+<p>is equivalent to:</p>
+<ul>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
+</ul>
+<p>and:</p>
+<ul>
+<li>  Red</li>
+<li>  Green</li>
+<li>  Blue</li>
+</ul>
+<p>Ordered lists use numbers followed by periods:</p>
+<ol>
+<li> Bird</li>
+<li> McHale</li>
+<li> Parish</li>
+</ol>
+<p>It’s important to note that the actual numbers you use to mark the<br>list have no effect on the HTML output Markdown produces. The HTML<br>Markdown produces from the above list is:</p>
+<p>If you instead wrote the list in Markdown like this:</p>
+<ol>
+<li> Bird</li>
+<li> McHale</li>
+<li> Parish</li>
+</ol>
+<p>or even:</p>
+<ol start="3">
+<li>Bird</li>
+<li>McHale</li>
+<li>Parish</li>
+</ol>
+<p>you’d get the exact same HTML output. The point is, if you want to,<br>you can use ordinal numbers in your ordered Markdown lists, so that<br>the numbers in your source match the numbers in your published HTML.<br>But if you want to be lazy, you don’t have to.</p>
+<p>To make lists look nice, you can wrap items with hanging indents:</p>
+<ul>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.<br>  Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,<br>  viverra nec, fringilla in, laoreet vitae, risus.</li>
+<li>Donec sit amet nisl. Aliquam semper ipsum sit amet velit.<br>  Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+</ul>
+<p>But if you want to be lazy, you don’t have to:</p>
+<ul>
+<li>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.<br>Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,<br>viverra nec, fringilla in, laoreet vitae, risus.</li>
+<li>  Donec sit amet nisl. Aliquam semper ipsum sit amet velit.<br>Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+</ul>
+<p>List items may consist of multiple paragraphs. Each subsequent<br>paragraph in a list item must be indented by either 4 spaces<br>or one tab:</p>
+<ol>
+<li><p>This is a list item with two paragraphs. Lorem ipsum dolor<br> sit amet, consectetuer adipiscing elit. Aliquam hendrerit<br> mi posuere lectus.</p>
+<p> Vestibulum enim wisi, viverra nec, fringilla in, laoreet<br> vitae, risus. Donec sit amet nisl. Aliquam semper ipsum<br> sit amet velit.</p>
+</li>
+<li><p> Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+</li>
+</ol>
+<p>It looks nice if you indent every line of the subsequent<br>paragraphs, but here again, Markdown will allow you to be<br>lazy:</p>
+<ul>
+<li><p>This is a list item with two paragraphs.</p>
+<p>  This is the second paragraph in the list item. You’re<br>only required to indent the first line. Lorem ipsum dolor<br>sit amet, consectetuer adipiscing elit.</p>
+</li>
+<li><p>  Another item in the same list.</p>
+</li>
+</ul>
+<p>To put a blockquote within a list item, the blockquote’s <code>&gt;</code><br>delimiters need to be indented:</p>
+<ul>
+<li><p>A list item with a blockquote:</p>
+<blockquote>
+<p>This is a blockquote<br>inside a list item.</p>
+</blockquote>
+</li>
+</ul>
+<p>To put a code block within a list item, the code block needs<br>to be indented <em>twice</em> – 8 spaces or two tabs:</p>
+<ul>
+<li><p>A list item with a code block:</p>
+<pre><code>  &lt;code goes here&gt;
+</code></pre>
+</li>
+</ul>
+<h3 id="Code-Blocks"><a href="#Code-Blocks" class="headerlink" title="Code Blocks"></a>Code Blocks</h3><p>Pre-formatted code blocks are used for writing about programming or<br>markup source code. Rather than forming normal paragraphs, the lines<br>of a code block are interpreted literally. Markdown wraps a code block<br>in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
+<p>To produce a code block in Markdown, simply indent every line of the<br>block by at least 4 spaces or 1 tab.</p>
+<p>This is a normal paragraph:</p>
+<pre><code>This is a code block.
+</code></pre>
+<p>Here is an example of AppleScript:</p>
+<pre><code>tell application &quot;Foo&quot;
+    beep
+end tell
+</code></pre>
+<p>A code block continues until it reaches a line that is not indented<br>(or the end of the article).</p>
+<p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>)<br>are automatically converted into HTML entities. This makes it very<br>easy to include example HTML source code using Markdown – just paste<br>it and indent it, and Markdown will handle the hassle of encoding the<br>ampersands and angle brackets. For example, this:</p>
+<pre><code>&lt;div class=&quot;footer&quot;&gt;
+    &amp;copy; 2004 Foo Corporation
+&lt;/div&gt;
+</code></pre>
+<p>Regular Markdown syntax is not processed within code blocks. E.g.,<br>asterisks are just literal asterisks within a code block. This means<br>it’s also easy to use Markdown to write about Markdown’s own syntax.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tell application &quot;Foo&quot;</span><br><span class="line">    beep</span><br><span class="line">end tell</span><br></pre></td></tr></table></figure>
+
+<h2 id="Span-Elements"><a href="#Span-Elements" class="headerlink" title="Span Elements"></a>Span Elements</h2><h3 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h3><p>Markdown supports two style of links: <em>inline</em> and <em>reference</em>.</p>
+<p>In both styles, the link text is delimited by [square brackets].</p>
+<p>To create an inline link, use a set of regular parentheses immediately<br>after the link text’s closing square bracket. Inside the parentheses,<br>put the URL where you want the link to point, along with an <em>optional</em><br>title for the link, surrounded in quotes. For example:</p>
+<p>This is <a href="http://example.com/">an example</a> inline link.</p>
+<p><a target="_blank" rel="noopener" href="http://example.net/">This link</a> has no title attribute.</p>
+<h3 id="Emphasis"><a href="#Emphasis" class="headerlink" title="Emphasis"></a>Emphasis</h3><p>Markdown treats asterisks (<code>*</code>) and underscores (<code>_</code>) as indicators of<br>emphasis. Text wrapped with one <code>*</code> or <code>_</code> will be wrapped with an<br>HTML <code>&lt;em&gt;</code> tag; double <code>*</code>‘s or <code>_</code>‘s will be wrapped with an HTML<br><code>&lt;strong&gt;</code> tag. E.g., this input:</p>
+<p><em>single asterisks</em></p>
+<p><em>single underscores</em></p>
+<p><strong>double asterisks</strong></p>
+<p><strong>double underscores</strong></p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p>To indicate a span of code, wrap it with backtick quotes (<code>`</code>).<br>Unlike a pre-formatted code block, a code span indicates code within a<br>normal paragraph. For example:</p>
+<p>Use the <code>printf()</code> function.</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="http://wx4.sinaimg.cn/mw690/ab494ac4gy1gcyg2gbbeyj20yk0u01kx.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">锐</div><div class="author-info__description">看自己，看天地，看众生。</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://www.bilibili.com/"><i class="fas fa-globe"></i><span>去哔哩哔哩</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://photo.weibo.com/" target="_blank" title="微博相册"><i class="fab fa-weibo"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">陌生人，感激你的到来！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/06/26/%E7%B1%BB%E8%84%913/" title="类脑计算的困境和出路（3）"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/postcover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="类脑计算的困境和出路（3）"/></a><div class="content"><a class="title" href="/2021/06/26/%E7%B1%BB%E8%84%913/" title="类脑计算的困境和出路（3）">类脑计算的困境和出路（3）</a><time datetime="2021-06-26T02:04:05.000Z" title="发表于 2021-06-26 10:04:05">2021-06-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/24/%E7%B1%BB%E8%84%912/" title="类脑计算的困境和出路（2）"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/postcover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="类脑计算的困境和出路（2）"/></a><div class="content"><a class="title" href="/2021/06/24/%E7%B1%BB%E8%84%912/" title="类脑计算的困境和出路（2）">类脑计算的困境和出路（2）</a><time datetime="2021-06-24T02:04:05.000Z" title="发表于 2021-06-24 10:04:05">2021-06-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/10/%E7%B1%BB%E8%84%911/" title="类脑计算的困境和出路（1）"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/postcover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="类脑计算的困境和出路（1）"/></a><div class="content"><a class="title" href="/2021/06/10/%E7%B1%BB%E8%84%911/" title="类脑计算的困境和出路（1）">类脑计算的困境和出路（1）</a><time datetime="2021-06-10T02:04:05.000Z" title="发表于 2021-06-10 10:04:05">2021-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/05/%E4%B8%80%E4%BA%9B%E9%9A%8F%E6%83%B3/" title="一些随想"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://wx2.sinaimg.cn/large/ab494ac4gy1gr77l3qzr8j20k00b9ahr.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一些随想"/></a><div class="content"><a class="title" href="/2021/06/05/%E4%B8%80%E4%BA%9B%E9%9A%8F%E6%83%B3/" title="一些随想">一些随想</a><time datetime="2021-06-05T03:04:05.000Z" title="发表于 2021-06-05 11:04:05">2021-06-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/12/%E4%BB%8E%E5%AE%89%E9%A1%BA%E5%85%AC%E4%BA%A4%E5%8F%B8%E6%9C%BA%E7%9C%8B%E5%8F%91%E5%B1%95%E7%9A%84%E9%97%AE%E9%A2%98/" title="从安顺公交司机看发展的问题"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://wx1.sinaimg.cn/wap720/ab494ac4gy1ggog2ow5zrj21kw0w00yd.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从安顺公交司机看发展的问题"/></a><div class="content"><a class="title" href="/2020/07/12/%E4%BB%8E%E5%AE%89%E9%A1%BA%E5%85%AC%E4%BA%A4%E5%8F%B8%E6%9C%BA%E7%9C%8B%E5%8F%91%E5%B1%95%E7%9A%84%E9%97%AE%E9%A2%98/" title="从安顺公交司机看发展的问题">从安顺公交司机看发展的问题</a><time datetime="2020-07-12T02:04:05.000Z" title="发表于 2020-07-12 10:04:05">2020-07-12</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%83%B3/"><span class="card-category-list-name">个人感想</span><span class="card-category-list-count">2</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%83%B3/%E7%A4%BE%E4%BC%9A%E9%97%AE%E9%A2%98/"><span class="card-category-list-name">社会问题</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B0%8F%E7%9F%A5%E8%AF%86/"><span class="card-category-list-name">小知识</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">计算机技术</span><span class="card-category-list-count">3</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E7%B1%BB%E8%84%91%E8%AE%A1%E7%AE%97/"><span class="card-category-list-name">类脑计算</span><span class="card-category-list-count">3</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%BD%AC%E8%BD%BD/"><span class="card-category-list-name">转载</span><span class="card-category-list-count">6</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%BD%AC%E8%BD%BD/%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">学习</span><span class="card-category-list-count">6</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%80%BB%E8%BE%91%E5%AD%A6/"><span class="card-category-list-name">逻辑学</span><span class="card-category-list-count">2</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%8F%91%E5%B1%95/" style="font-size: 1.1em; color: #999">发展</a> <a href="/tags/%E5%9E%84%E6%96%AD/" style="font-size: 1.1em; color: #999">垄断</a> <a href="/tags/%E5%A4%8D%E6%9D%82%E6%80%A7/" style="font-size: 1.5em; color: #99a9bf">复杂性</a> <a href="/tags/%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 1.1em; color: #999">政治经济学</a> <a href="/tags/%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/" style="font-size: 1.1em; color: #999">社会科学</a> <a href="/tags/%E7%B1%BB%E8%84%91%E8%AE%A1%E7%AE%97/" style="font-size: 1.5em; color: #99a9bf">类脑计算</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/" style="font-size: 1.5em; color: #99a9bf">计算机技术</a> <a href="/tags/%E9%80%BB%E8%BE%91%E5%AD%A6/" style="font-size: 1.3em; color: #99a1ac">逻辑学</a> <a href="/tags/%E9%9A%8F%E6%83%B3/" style="font-size: 1.1em; color: #999">随想</a> <a href="/tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" style="font-size: 1.1em; color: #999">马克思</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/03/"><span class="card-archive-list-date">三月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/02/"><span class="card-archive-list-date">二月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/09/"><span class="card-archive-list-date">九月 2019</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">9</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-03-12T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">26.9k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-07-02T04:53:03.120Z"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/topimg.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 锐</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      true && mermaid.init()
+    })
+  }
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener toc scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
